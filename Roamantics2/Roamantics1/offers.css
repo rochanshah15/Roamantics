@@ -1,0 +1,251 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: white !important;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffc107 !important;
+}
+
+.navbar-toggler {
+    background-color: black !important;
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-nav .nav-link {
+    color: black !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* Hero section */
+.hero-wrap {
+    height: 100vh;
+    background: url('images/bg_1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-wrap .container {
+    position: relative;
+    text-align: center;
+}
+
+.hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-wrap p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Styling the package cards */
+.package-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensuring modal content looks clean */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #20c997;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.filters {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Filters Section */
+#categoryFilter,
+#placeFilter {
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+#categoryFilter:hover,
+#placeFilter:hover {
+    border-color: #007bff;
+}
+
+#categoryFilter:focus,
+#placeFilter:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+/* Offer Sections */
+.offer-category {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.offer-category h2 {
+    /* color: #007bff; */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffc107;
+    /* display: inline-block; */
+    padding-bottom: 5px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Cards */
+.offer-card {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    /* background: linear-gradient(135deg, #007bff, #0056b3); */
+    background: #20c997;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    /* background: linear-gradient(135deg, #0056b3, #0041a3); */
+    /* box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.3); */
+    background: #20c997;
+    box-shadow: 0px 4px 12px #20c997;
+}
+
+/* No Results Message */
+.no-results {
+    font-size: 1.2rem;
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offer-category {
+        padding: 15px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    #categoryFilter,
+    #placeFilter {
+        width: 90%;
+    }
+}

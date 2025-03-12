@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roamantics - Travel Made Easy.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="flaticon.css">
+    
+    <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Navbar Styling */
+    .navbar {
+      background: white !important;
+      padding: 15px 0;
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffc107 !important;
+    }
+    .navbar-toggler {
+      background-color: black !important;
+      border: none;
+    }
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    .navbar-nav .nav-link {
+      color: black !important;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    /* Hero Section */
+    .hero-wrap {
+      height: 100vh;
+      background: url('images/bg_1.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-wrap .container {
+      position: relative;
+      text-align: center;
+    }
+    .hero-wrap h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero-wrap p {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    /* Flight Search Section */
+    .ftco-search {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 800px;
+      margin: -50px auto 0 auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .nav-pills .nav-link {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+    .nav-pills .nav-link.active {
+      background: #ffc107;
+      color: #000;
+    }
+    .form-control {
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .btn-primary {
+      background: #ffc107;
+      border: none;
+      font-weight: 600;
+      padding: 10px 20px;
+    }
+    .grid div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .ftco-counter {
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 80px 0;
+    }
+    .block-18 {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .block-18:hover {
+      transform: scale(1.1);
+    }
+    .number {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    span {
+      display: block;
+      font-size: 1.2rem;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .ftco-counter {
+
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 80px 0;
+      overflow: hidden;
+      background-image: url('images/bg_1.jpg');
+    }
+    .block-18 {
+      background: rgba(255, 255, 255, 0.2);
+      height: 200px;
+      padding: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .block-18:hover {
+      transform: scale(1.1);
+    }
+    .number {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+    }
+    .counter-wrap {
+      flex: 1;
+      text-align: center;
+    }
+    span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    .service-box {
+      background: white;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+    }
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .icon-box {
+      font-size: 40px;
+      color: #ff9800;
+      background: rgba(255, 152, 0, 0.1);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    .service-item h4 {
+      font-size: 20px;
+      color: #333;
+    }
+    .service-item p {
+      color: #666;
+      font-size: 14px;
+    }
+
+
+    .restaurant-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+  
+    .restaurant-card:hover {
+      transform: translateY(-5px);
+    }
+  
+    .restaurant-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+    }
+  
+    .restaurant-card:hover .restaurant-image {
+      filter: blur(3px) brightness(0.7);
+    }
+  
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .restaurant-card:hover .card-content {
+      transform: translateY(0);
+    }
+  
+    .description {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  
+    .restaurant-card:hover .description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .book-now-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    .restaurant-card:hover .book-now-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .book-now-btn:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  
+    .grid-cols-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  
+    @media (max-width: 768px) {
+      .grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    .hotel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hotel-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+    }
+
+    .hotel-card:hover .hotel-image {
+      filter: blur(3px) brightness(0.7);
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .hotel-card:hover .card-content {
+      transform: translateY(0);
+    }
+
+    .description {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .hotel-card:hover .description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .book-now-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hotel-card:hover .book-now-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .book-now-btn:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .grid-cols-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    </style>
+  </head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index2.html">Roamantics</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="places2.html">Places</a></li>
+          <li class="nav-item"><a class="nav-link" href="hotel2.html">Hotels</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-wrap" style="position : relative ; z-index : 1">
+    <div class="container">
+      <h1 class="text-center">Discover A New Place</h1>
+      <p class="text-center">Find great places to stay, eat, shop, or visit from local experts</p>
+    </div>
+  </div>
+
+  <!-- Flight Search Section -->
+  <section class="ftco-search container" style="position : relative ; z-index : 2; margin-top : -50px">
+    <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-flight-tab" data-bs-toggle="pill" data-bs-target="#pills-flight" type="button" role="tab" aria-controls="pills-flight" aria-selected="true">Flight</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-hotel-tab" data-bs-toggle="pill" data-bs-target="#pills-hotel" type="button" role="tab" aria-controls="pills-hotel" aria-selected="true">Hotels</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-car-tab" data-bs-toggle="pill" data-bs-target="#pills-car" type="button" role="tab" aria-controls="pills-car" aria-selected="true">Car Rent</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-flight" role="tabpanel" aria-labelledby="pills-flight-tab">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="From" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="To" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-12">
+            <select class="form-select">
+              <option selected>Travellers</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tab-pane fade show" id="pills-hotel" role="tabpanel" aria-labelledby="pills-hotel-tab">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Check In" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Check Out" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-12">
+            <select class="form-select">
+              <option selected>Guests</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tab-pane fade show" id="pills-car" role="tabpanel" aria-labelledby="pills-car-tab">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Check In" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Check Out" disabled>
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-12">
+            <input type="text" class="form-control" placeholder="Where?">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="ftco-section services-section bg-light py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-8">
+          <h2 class="fw-bold display-5">Our <span style="color: #ff9800;">Services</span></h2>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Service 1 -->
+        <div class="col">
+          <div class="service-box shadow-lg p-4 rounded h-100">
+            <div class="icon-box mb-3">
+              <span class="flaticon-yatch"></span>
+            </div>
+            <h4 class="fw-bold">Special Activities</h4>
+            <p>Experience thrilling adventures and exclusive activities tailored to make your journey unforgettable.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="col">
+          <div class="service-box shadow-lg p-4 rounded h-100">
+            <div class="icon-box mb-3">
+              <span class="flaticon-around"></span>
+            </div>
+            <h4 class="fw-bold">Travel Arrangements</h4>
+            <p>Seamless trip planning, from flights to accommodations, ensuring a hassle-free travel experience.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="col">
+          <div class="service-box shadow-lg p-4 rounded h-100">
+            <div class="icon-box mb-3">
+              <span class="flaticon-compass"></span>
+            </div>
+            <h4 class="fw-bold">Private Guide</h4>
+            <p>Expert local guides providing personalized tours, deep insights, and hidden gems of your destination.</p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col">
+          <div class="service-box shadow-lg p-4 rounded h-100">
+            <div class="icon-box mb-3">
+              <span class="flaticon-map-of-roads"></span>
+            </div>
+            <h4 class="fw-bold">Location Manager</h4>
+            <p>Efficient coordination of travel logistics, ensuring smooth navigation and stress-free exploration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counter Section -->
+  <section class="ftco-counter" id="section-counter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4 mb-md-0">
+          <div class="block-18 text-center">
+            <div class="text">
+              <strong class="number" data-target="100000">0</strong>
+              <span>Happy Customers</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4 mb-md-0">
+          <div class="block-18 text-center">
+            <div class="text">
+              <strong class="number" data-target="40000">0</strong>
+              <span>Destination Places</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="block-18 text-center">
+            <div class="text">
+              <strong class="number" data-target="87000">0</strong>
+              <span>Hotels
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="block-18 text-center">
+            <div class="text">
+              <strong class="number" data-target="56400">0</strong>
+              <span>Restaurant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".number");
+    
+      const countUp = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        let current = 0;
+    
+        const interval = setInterval(() => {
+          current += Math.ceil(target / 100); // Adjust speed by changing '100'
+          if (current >= target) {
+            counter.textContent = target.toLocaleString(); // Stop at the target
+            clearInterval(interval);
+          } else {
+            counter.textContent = current.toLocaleString();
+          }
+        }, 20); // Adjust interval time for smoother animation
+      };
+    
+      const handleScroll = () => {
+        counters.forEach((counter) => {
+          const rect = counter.getBoundingClientRect();
+          if (rect.top < window.innerHeight && !counter.classList.contains("counted")) {
+            counter.classList.add("counted");
+            countUp(counter);
+          }
+        });
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Trigger on load in case the section is already visible
+    });
+    
+  </script>
+
+  <!-- Popular Hotels Section -->
+  <section class="ftco-section py-5 bg-light" style="font-family: 'Poppins', sans-serif;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="fw-bold text-3xl text-gray-800" data-aos="fade-down">Popular <span style="font-weight: 900; color: #20c997;">Hotels</span></h1>
+      </div>
+      <div class="grid grid-cols-3">
+        <!-- Hotel 1 -->
+        <div class="hotel-card" data-aos="fade-up" data-aos-delay="400" style="height:300px">
+          <img src="images/hotel-1.jpg" alt="New Orleans, Hotel" class="hotel-image" style="height:300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">New Orleans, Hotel</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+        <!-- Hotel 2 -->
+        <div class="hotel-card" data-aos="fade-up" data-aos-delay="600" style="height:300px">
+          <img src="images/hotel-2.jpg" alt="New Orleans, Hotel" class="hotel-image" style="height:300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">New Orleans, Hotel</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+        <!-- Hotel 3 -->
+        <div class="hotel-card" data-aos="fade-up" data-aos-delay="800" style="height:300px">
+          <img src="images/hotel-3.jpg" alt="New Orleans, Hotel" class="hotel-image"style="height:300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">New Orleans, Hotel</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Initialization -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
+  <!-- Most Popular Destinations -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 fw-bold">Most Popular Destinations</h2>
+        <p class="text-muted">Explore our top travel destinations</p>
+      </div>
+      <div class="row g-4">
+        <!-- Destination 1 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg rounded-3 overflow-hidden" style="height :auto">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="images/destination-1.jpg" class="img-fluid h-100 object-fit-cover" alt="Paris, Italy">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Paris, Italy</h3>
+                  <p class="text-warning mb-1">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-muted">8 Rating</span></p>
+                  <p class="card-text">Far far away, behind the word mountains.</p>
+                  <p class="fw-bold">2 days 3 nights</p>
+                  <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>San Francisco, CA</p>
+                  <a href="#" class="btn btn-success rounded-pill">Discover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Destination 2 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg rounded-3 overflow-hidden" style="height : auto">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="images/destination-2.jpg" class="img-fluid h-100 object-fit-cover" alt="London, UK">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">London, UK</h3>
+                  <p class="text-warning mb-1">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-muted">9 Rating</span></p>
+                  <p class="card-text">Discover the history and beauty of London.</p>
+                  <p class="fw-bold">3 days 4 nights</p>
+                  <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>London, UK</p>
+                  <a href="#" class="btn btn-success rounded-pill">Discover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Destination 3 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg rounded-3 overflow-hidden" style="height : auto">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="images/destination-3.jpg" class="img-fluid h-100 object-fit-cover" alt="Bali, Indonesia" style="height:330px !important;width:514px;">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Bali, Indonesia</h3>
+                  <p class="text-warning mb-1">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-muted">8.5 Rating</span></p>
+                  <p class="card-text">Experience the exotic beauty of Bali.</p>
+                  <p class="fw-bold">4 days 5 nights</p>
+                  <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Bali, Indonesia</p>
+                  <a href="#" class="btn btn-success rounded-pill">Discover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Destination 4 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg rounded-3 overflow-hidden" style="height : auto">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="images/destination-4.jpg" class="img-fluid h-100 object-fit-cover" alt="Tokyo, Japan">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Tokyo, Japan</h3>
+                  <p class="text-warning mb-1">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-muted">9.2 Rating</span></p>
+                  <p class="card-text">Explore the futuristic beauty of Tokyo.</p>
+                  <p class="fw-bold">5 days 6 nights</p>
+                  <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Tokyo, Japan</p>
+                  <a href="#" class="btn btn-success rounded-pill">Discover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5" style="background-color: #20c997;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-white display-4">Our satisfied customer says</h2>
+      </div>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card bg-white text-center p-4 rounded-3 shadow-lg">
+              <img src="images/person_1.jpg" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px;" alt="Customer">
+              <p class="card-text">Customer service was super helpful and quick to resolve my issue!</p>
+              <h5 class="card-title fw-bold">Mistry Kahan</h5>
+              <p class="card-text text-muted">System Analyst</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card bg-white text-center p-4 rounded-3 shadow-lg">
+              <img src="images/person_2.jpg" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px;" alt="Customer">
+              <p class="card-text">Easy-to-use website with accurate hotel reviews!</p>
+              <h5 class="card-title fw-bold">Meet Shah</h5>
+              <p class="card-text text-muted">Marketing Manager</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card bg-white text-center p-4 rounded-3 shadow-lg">
+              <img src="images/person_3.jpg" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px;" alt="Customer">
+              <p class="card-text">Loved the recommendations—made my trip planning so much easier!</p>
+              <h5 class="card-title fw-bold">Viraj Shah</h5>
+              <p class="card-text text-muted">UI Designer</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section py-5 bg-light" style="font-family: 'Poppins', sans-serif;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="fw-bold text-3xl text-gray-800" data-aos="fade-down">Recommended <span style="font-weight: 900;">Restaurants</span></h1>
+      </div>
+      <div class="grid grid-cols-3">
+        <!-- Restaurant 1 -->
+        <div class="restaurant-card" data-aos="fade-up" data-aos-delay="400" style="height: 300px">
+          <img src="images/restaurant-1.jpg" alt="Luxury Restaurant" class="restaurant-image" style="height: 300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">Luxury Restaurant</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+        <!-- Restaurant 2 -->
+        <div class="restaurant-card" data-aos="fade-up" data-aos-delay="600" style="height: 300px">
+          <img src="images/restaurant-2.jpg" alt="Luxury Restaurant" class="restaurant-image" style="height: 300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">Luxury Restaurant</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+        <!-- Restaurant 3 -->
+        <div class="restaurant-card" data-aos="fade-up" data-aos-delay="800" style="height: 300px">
+          <img src="images/restaurant-3.jpg" alt="Luxury Restaurant" class="restaurant-image" style="height: 300px">
+          <div class="card-content">
+            <h3 class="text-2xl font-bold">Luxury Restaurant</h3>
+            <p class="text-yellow-400">⭐ ⭐ ⭐ ⭐ ☆ <span class="text-white">8 Rating</span></p>
+            <p class="text-sm description">Far far away, behind the word mountains, far from the countries.</p>
+            <a href="#" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-4"><strong>Tips</strong> &amp; Articles</h2>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Blog Entry 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-lg rounded-3 overflow-hidden">
+            <img src="images/image_1.jpg" class="card-img-top" alt="Blog Image" style="height: 300px;">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Tips, Travel</span>
+              <h3 class="card-title fw-bold">8 Best homestays in the Philippines that you shouldn't miss out</h3>
+              <p class="card-text text-muted">October 3, 2018 | Admin | <i class="fas fa-comment"></i> 3</p>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Entry 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-lg rounded-3 overflow-hidden">
+            <img src="images/image_2.jpg" class="card-img-top" alt="Blog Image" style="height: 300px;">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Culture</span>
+              <h3 class="card-title fw-bold">Even the all-powerful Pointing has no control about the blind texts</h3>
+              <p class="card-text text-muted">October 3, 2018 | Admin | <i class="fas fa-comment"></i> 3</p>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Entry 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-lg rounded-3 overflow-hidden">
+            <img src="images/image_3.jpg" class="card-img-top" alt="Blog Image" style="height: 300px;">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Tips, Travel</span>
+              <h3 class="card-title fw-bold">Even the all-powerful Pointing has no control over the blind texts</h3>
+              <p class="card-text text-muted">October 3, 2018 | Admin | <i class="fas fa-comment"></i> 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section py-5"
+    style="background-color: #20c997; min-height: 60vh; display: flex; align-items: center; font-family: 'Poppins', sans-serif;">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3 text-white" style="font-size: 2.5rem;">Subscribe to our <span
+          style="font-weight: 800;">Newsletter</span></h2>
+      <p class="text-white-50 mb-4" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">Far far away,
+        behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+        Separated they live in.</p>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form class="d-flex justify-content-center align-items-center rounded-pill p-8"
+            style="background: transparent;">
+            <!-- Email Input -->
+            <input type="email" class="border-0 bg-white text-dark px-3 h-10 shadow" placeholder="Enter Email Address"
+              required
+              style="outline: none; font-size: 1.1rem; font-style: italic; height: 50px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); padding-right : 20px; width: 350px;">
+            <!-- Subscribe Button -->
+            <button type="submit" class="btn btn-success px-4 shadow"
+              style="font-weight: 700; font-size: 1.1rem; height: 53px; transition: all 0.3s ease; background-color: #ffa303; border-radius: 0px !important;">Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <h3 class="fw-bold mb-3">Adventure</h3>
+                <p>Your gateway to unforgettable travel experiences.</p>
+            </div>
+            <div class="col">
+                <h3 class="fw-bold mb-3">Quick Links</h3>
+                <ul class="list-unstyled">
+                    <li><a href="index2.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="offers.html" class="text-white-50 text-decoration-none">Offers</a></li>
+                    <li><a href="places2.html" class="text-white-50 text-decoration-none">Places</a></li>
+                    <li><a href="hotel2.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About</a></li>
+                    <li><a href="ContactUs.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3 class="fw-bold mb-3">Contact Us</h3>
+                <p>Email: info@adventure.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="col">
+                <h3 class="fw-bold mb-3">Follow Us</h3>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white-50"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white-50"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white-50"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    // Counter animation
+    document.addEventListener("DOMContentLoaded", function() {
+      const counters = document.querySelectorAll(".number");
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText.replace(/,/g, "");
+          const increment = target / speed;
+          
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment).toLocaleString();
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+        updateCount();
+      });
+    });
+  </script>
+</body>
+</html>

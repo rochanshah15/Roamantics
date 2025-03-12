@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Offers - Roamantics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="offers.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Roamantics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="places2.html">Places</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hotel2.html">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-wrap" style="position: relative; z-index: 1">
+        <div class="container">
+            <h1 class="text-center">Exclusive Travel Offers</h1>
+        </div>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="container bg-light my-4 py-2 rounded">
+        <h5 class="m-2">Search:</h5>
+        <div class="row">
+            <div class="col-md-6 my-1 d-flex justify-content-center">
+                <select id="categoryFilter" class="form-control">
+                    <option value="">Select Category</option>
+                    <option value="honeymoon">Honeymoon Packages</option>
+                    <option value="adventure">Adventure Trips</option>
+                    <option value="family">Family Vacations</option>
+                    <option value="budget">Budget Travel</option>
+                    <option value="luxury">Luxury Getaways</option>
+                </select>
+            </div>
+            <div class="col-md-6 my-1 d-flex justify-content-center">
+                <input type="text" id="placeFilter" class="form-control" placeholder="Search by Place">
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers Section -->
+    <div class="container">
+        <!-- Honeymoon Packages -->
+        <div class="offer-category honeymoon">
+            <h2 class="d-md-flex justify-content-md-start">Honeymoon Packages</h2>
+            <div class="row offer-list">
+                <div class="col-md-4 offer-card" data-place="maldives">
+                    <div class="card">
+                        <img src="images/destination-1.jpg" class="card-img-top" alt="Maldives">
+                        <div class="card-body">
+                            <h5 class="card-title">Romantic Maldives Escape</h5>
+                            <p class="card-text">A 5-night luxury stay in an overwater villa with candlelight dinners.
+                            </p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 offer-card" data-place="bali">
+                    <div class="card">
+                        <img src="images/destination-2.jpg" class="card-img-top" alt="Bali">
+                        <div class="card-body">
+                            <h5 class="card-title">Bali Honeymoon Retreat</h5>
+                            <p class="card-text">Experience the charm of Bali with spa treatments and sunset dinners.
+                            </p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 offer-card" data-place="santorini">
+                    <div class="card">
+                        <img src="images/destination-4.jpg" class="card-img-top" alt="Santorini">
+                        <div class="card-body">
+                            <h5 class="card-title">Santorini Romantic Escape</h5>
+                            <p class="card-text">Witness breathtaking sunsets, stay in luxurious cave hotels, and
+                                explore the blue-domed
+                                churches.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="maldives">
+                    <div class="card">
+                        <img src="images/destination-5.jpg" class="card-img-top" alt="Maldives">
+                        <div class="card-body">
+                            <h5 class="card-title">Maldives Overwater Bungalow Stay</h5>
+                            <p class="card-text">Enjoy a private stay in a luxurious water villa with snorkeling and
+                                candlelit dinners.
+                            </p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="paris">
+                    <div class="card">
+                        <img src="images/destination-6.jpg" class="card-img-top" alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title">Paris Eiffel Romance</h5>
+                            <p class="card-text">Stay in a luxury hotel with Eiffel Tower views and a Seine River dinner
+                                cruise.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="no-results text-center text-muted" style="display: none;">No offers available for this place in
+                this
+                category.</p>
+        </div>
+
+        <!-- Adventure Trips -->
+        <div class="offer-category adventure">
+            <h2 class="d-md-flex justify-content-md-start">Adventure Trips</h2>
+            <div class="row offer-list">
+                <div class="col-md-4 offer-card" data-place="switzerland">
+                    <div class="card">
+                        <img src="images/destination-4.jpg" class="card-img-top" alt="Switzerland">
+                        <div class="card-body">
+                            <h5 class="card-title">Swiss Alps Skiing Adventure</h5>
+                            <p class="card-text">Thrilling skiing experience in the Alps with expert guides.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 offer-card" data-place="patagonia">
+                    <div class="card">
+                        <img src="images/destination-2.jpg" class="card-img-top" alt="Patagonia">
+                        <div class="card-body">
+                            <h5 class="card-title">Patagonia Hiking Expedition</h5>
+                            <p class="card-text">Explore the rugged beauty of Patagonia with guided hikes and glacier
+                                treks.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="newzealand">
+                    <div class="card">
+                        <img src="images/destination-1.jpg" class="card-img-top" alt="New Zealand">
+                        <div class="card-body">
+                            <h5 class="card-title">Queenstown Thrill Seeker</h5>
+                            <p class="card-text">Bungee jumping, skydiving, and thrilling adventure sports await in
+                                Queenstown.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="peru">
+                    <div class="card">
+                        <img src="images/destination-6.jpg" class="card-img-top" alt="Machu Picchu">
+                        <div class="card-body">
+                            <h5 class="card-title">Machu Picchu Trek</h5>
+                            <p class="card-text">Hike the legendary Inca Trail and explore the breathtaking ruins of
+                                Machu Picchu.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="no-results text-center text-muted" style="display: none;">No offers available for this place in
+                this
+                category.</p>
+        </div>
+
+        <!-- Family Vacations -->
+        <div class="offer-category family">
+            <h2 class="d-md-flex justify-content-md-start">Family Vacations</h2>
+            <div class="row offer-list">
+                <div class="col-md-4 offer-card" data-place="orlando">
+                    <div class="card">
+                        <img src="images/destination-5.jpg" class="card-img-top" alt="Orlando">
+                        <div class="card-body">
+                            <h5 class="card-title">Disney World Family Fun</h5>
+                            <p class="card-text">Enjoy magical moments with the whole family at Disney World and
+                                Universal Studios.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 offer-card" data-place="orlando">
+                    <div class="card">
+                        <img src="images/destination-5.jpg" class="card-img-top" alt="Orlando">
+                        <div class="card-body">
+                            <h5 class="card-title">Disney World Family Fun</h5>
+                            <p class="card-text">Enjoy magical moments with the whole family at Disney World and
+                                Universal Studios.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="tokyo">
+                    <div class="card">
+                        <img src="images/destination-4.jpg" class="card-img-top" alt="Tokyo">
+                        <div class="card-body">
+                            <h5 class="card-title">Tokyo Family Adventure</h5>
+                            <p class="card-text">Visit Disneyland Tokyo, anime museums, and explore the vibrant streets
+                                of Shibuya.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="singapore">
+                    <div class="card">
+                        <img src="images/destination-1.jpg" class="card-img-top" alt="Singapore">
+                        <div class="card-body">
+                            <h5 class="card-title">Singapore Family Getaway</h5>
+                            <p class="card-text">Explore Sentosa Island, visit the Singapore Zoo, and enjoy the city's
+                                modern attractions.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="no-results text-center text-muted" style="display: none;">No offers available for this place in
+                this
+                category.</p>
+        </div>
+
+        <!-- Budget Travel -->
+        <div class="offer-category budget">
+            <h2 class="d-md-flex justify-content-md-start">Budget Travels</h2>
+            <div class="row offer-list">
+                <div class="col-md-4 offer-card" data-place="bangkok">
+                    <div class="card">
+                        <img src="images/destination-4.jpg" class="card-img-top" alt="Bangkok">
+                        <div class="card-body">
+                            <h5 class="card-title">Bangkok Backpacker Special</h5>
+                            <p class="card-text">Explore the vibrant markets, temples, and affordable street food in
+                                Bangkok.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="hanoi">
+                    <div class="card">
+                        <img src="images/destination-1.jpg" class="card-img-top" alt="Hanoi">
+                        <div class="card-body">
+                            <h5 class="card-title">Vietnam Explorer</h5>
+                            <p class="card-text">Discover the beauty of Hanoi and Ho Chi Minh City on a budget-friendly
+                                journey.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="no-results text-center text-muted" style="display: none;">No offers available for this place in
+                this
+                category.</p>
+        </div>
+
+        <!-- Budget Travel -->
+        <div class="offer-category luxury">
+            <h2 class="d-md-flex justify-content-md-start">Luxury Getaways</h2>
+            <div class="row offer-list">
+                <div class="col-md-4 offer-card" data-place="dubai">
+                    <div class="card">
+                        <img src="images/destination-6.jpg" class="card-img-top" alt="Dubai">
+                        <div class="card-body">
+                            <h5 class="card-title">Dubai Luxury Escape</h5>
+                            <p class="card-text">Stay in a 7-star hotel, explore desert safaris, and shop in world-class
+                                malls.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 offer-card" data-place="borabora">
+                    <div class="card">
+                        <img src="images/destination-4.jpg" class="card-img-top" alt="Bora Bora">
+                        <div class="card-body">
+                            <h5 class="card-title">Bora Bora Paradise Retreat</h5>
+                            <p class="card-text">Enjoy a private overwater bungalow stay with crystal-clear waters and
+                                scenic views.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offerModal">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="no-results text-center text-muted" style="display: none;">No offers available for this place in
+                this
+                category.</p>
+        </div>
+
+        <!-- Common Modal for All Offers -->
+        <div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="offerTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Offer Image (smaller size, centered) -->
+                        <div class="text-center mb-3">
+                            <img id="offerImage" src="" class="img-fluid rounded-3" alt="Offer Image"
+                                style="max-height: 250px; object-fit: cover;">
+                        </div>
+                        <!-- Offer Details -->
+                        <div>
+                            <p id="offerDescription" class="mb-3"></p>
+                            <div class="row">
+                                <div class="col-12 col-md-4 mb-3">
+                                    <h6 class="fw-bold">Itinerary</h6>
+                                    <p id="offerItinerary"></p>
+                                </div>
+
+                                <!-- Inclusions Column -->
+                                <div class="col-12 col-md-4 mb-3">
+                                    <h6 class="fw-bold">Inclusions</h6>
+                                    <ul id="offerInclusions">
+                                        <!-- Dynamically populated -->
+                                    </ul>
+                                </div>
+
+                                <!-- Exclusions Column -->
+                                <div class="col-12 col-md-4 mb-3">
+                                    <h6 class="fw-bold">Exclusions</h6>
+                                    <ul id="offerExclusions">
+                                        <!-- Dynamically populated -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h6 class="fw-bold d-flex">Price:&nbsp;
+                                    <p id="offerPrice" class="text-danger"></p>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Newsletter section -->
+    <section class="newsletter-section py-5"
+        style="background-color: #20c997; min-height: 60vh; display: flex; align-items: center; font-family: 'Poppins', sans-serif;">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3 text-white" style="font-size: 2.5rem;">Subscribe to our <span
+                    style="font-weight: 800;">Newsletter</span></h2>
+            <p class="text-white-50 mb-4" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">Far far away,
+                behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                Separated they live in.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="d-flex justify-content-center align-items-center rounded-pill p-8"
+                        style="background: transparent;">
+                        <!-- Email Input -->
+                        <input type="email" class="border-0 bg-white text-dark px-3 h-10 shadow"
+                            placeholder="Enter Email Address" required
+                            style="outline: none; font-size: 1.1rem; font-style: italic; height: 50px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); padding-right : 20px; width: 350px;">
+                        <!-- Subscribe Button -->
+                        <button type="submit" class="btn btn-success px-4 shadow"
+                            style="font-weight: 700; font-size: 1.1rem; height: 53px; transition: all 0.3s ease; background-color: #ffa303; border-radius: 0px !important;">Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <h3 class="fw-bold mb-3">Adventure</h3>
+                    <p>Your gateway to unforgettable travel experiences.</p>
+                </div>
+                <div class="col">
+                    <h3 class="fw-bold mb-3">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index2.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="offers.html" class="text-white-50 text-decoration-none">Offers</a></li>
+                        <li><a href="places2.html" class="text-white-50 text-decoration-none">Places</a></li>
+                        <li><a href="hotel2.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+                        <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About</a></li>
+                        <li><a href="ContactUs.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="fw-bold mb-3">Contact Us</h3>
+                    <p>Email: info@adventure.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="col">
+                    <h3 class="fw-bold mb-3">Follow Us</h3>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript for Filtering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Offer details data
+            const offerDetails = {
+                maldives: {
+                    title: "Romantic Maldives Escape",
+                    image: "images/destination-1.jpg",
+                    description: "A 5-night luxury stay in an overwater villa with candlelight dinners.",
+                    itinerary: "Day 1: Arrival <br>Day 2: Island Tour <br>Day 3: Spa & Dinner <br>Day 4: Snorkeling <br>Day 5: Departure.",
+                    inclusions: ["Luxury Stay", "Daily Breakfast", "Candlelight Dinner", "Spa Session"],
+                    exclusions: ["Flights", "Personal Expenses"],
+                    price: "$2500 per person"
+                },
+                bali: {
+                    title: "Bali Honeymoon Retreat",
+                    image: "images/destination-2.jpg",
+                    description: "Experience the charm of Bali with spa treatments and sunset dinners.",
+                    itinerary: "Day 1: Arrival <br>Day 2: Temple Tour <br>Day 3: Beach Resort Stay <br>Day 4: Spa & Shopping <br>Day 5: Departure.",
+                    inclusions: ["Luxury Stay", "Sunset Dinner", "Spa Session", "Airport Transfers"],
+                    exclusions: ["Flights", "Personal Expenses"],
+                    price: "$1800 per person"
+                },
+                santorini: {
+                    title: "Santorini Romantic Escape",
+                    image: "images/destination-4.jpg",
+                    description: "Witness breathtaking sunsets, stay in luxurious cave hotels, and explore the blue-domed churches.",
+                    itinerary: "Day 1: Arrival <br>Day 2: Sunset Cruise <br>Day 3: Island Exploration <br>Day 4: Relaxation <br>Day 5: Departure.",
+                    inclusions: ["Luxury Stay", "Daily Breakfast", "Sunset Cruise", "Private Tour"],
+                    exclusions: ["Flights", "Personal Expenses"],
+                    price: "$2800 per person"
+                },
+                paris: {
+                    title: "Paris Eiffel Romance",
+                    image: "images/destination-6.jpg",
+                    description: "Stay in a luxury hotel with Eiffel Tower views and a Seine River dinner cruise.",
+                    itinerary: "Day 1: Arrival <br>Day 2: Eiffel Tower & Louvre <br>Day 3: Seine River Cruise <br>Day 4: Shopping & Departure.",
+                    inclusions: ["Luxury Hotel Stay", "Seine River Cruise", "Daily Breakfast"],
+                    exclusions: ["Flights", "Personal Expenses"],
+                    price: "$3200 per person"
+                },
+                switzerland: {
+                    title: "Swiss Alps Skiing Adventure",
+                    image: "images/destination-4.jpg",
+                    description: "Thrilling skiing experience in the Alps with expert guides.",
+                    itinerary: "Day 1: Arrival <br>Day 2: Skiing Lessons <br>Day 3: Glacier Trek <br>Day 4: Free Exploration <br>Day 5: Departure.",
+                    inclusions: ["Luxury Ski Resort Stay", "Skiing Gear", "Instructor Sessions"],
+                    exclusions: ["Flights", "Personal Expenses"],
+                    price: "$2200 per person"
+                },
+                borabora: {
+                    title: "Bora Bora Paradise",
+                    image: "images/destination-4.jpg",
+                    description: "Enjoy a private overwater bungalow stay with crystal-clear waters and scenic views.",
+                    itinerary: "Day 1: Arrival and welcome dinner <br>Day 2: Relax in your overwater bungalow <br>Day 3: Lagoon snorkeling tour <br>Day 4: Sunset cruise <br>Day 5: Departure.",
+                    inclusions: ["Overwater Bungalow Stay", "Breakfast & Dinner Daily", "Lagoon Snorkeling Tour", "Sunset Cruise"],
+                    exclusions: ["Flights", "Personal Expenses", "Spa Services"],
+                    price: "$4200 per person"
+                },
+                dubai: {
+                    title: "Dubai Luxury Experience",
+                    image: "images/destination-6.jpg",
+                    description: "Stay in a 7-star hotel, explore desert safaris, and shop in world-class malls.",
+                    itinerary: "Day 1: Arrival and check-in to the 7-star hotel <br>Day 2: Desert Safari <br>Day 3: Visit Burj Khalifa & Dubai Mall <br>Day 4: Day Trip to Abu Dhabi <br>Day 5: Departure.",
+                    inclusions: ["7-Star Hotel Stay", "Desert Safari", "Burj Khalifa Tickets", "Luxury City Tours"],
+                    exclusions: ["Flights", "Personal Shopping Expenses", "Optional Activities"],
+                    price: "$3500 per person"
+                },
+                hanoi: {
+                    title: "Hanoi & Ho Chi Minh City Discovery",
+                    image: "images/destination-1.jpg",
+                    description: "Discover the beauty of Hanoi and Ho Chi Minh City on a budget-friendly journey.",
+                    itinerary: "Day 1: Arrival in Hanoi <br>Day 2: Explore the Old Quarter <br>Day 3: Ha Long Bay Cruise <br>Day 4: Explore Ho Chi Minh City <br>Day 5: Departure.",
+                    inclusions: ["4-Star Hotel Stay", "Daily Breakfast", "Ha Long Bay Cruise", "City Tours"],
+                    exclusions: ["Flights", "Personal Expenses", "Additional Tours"],
+                    price: "$1200 per person"
+                },
+                bangkok: {
+                    title: "Bangkok Adventure",
+                    image: "images/destination-4.jpg",
+                    description: "Explore the vibrant markets, temples, and affordable street food in Bangkok.",
+                    itinerary: "Day 1: Arrival and hotel check-in <br>Day 2: Temple Tours & Grand Palace <br>Day 3: Chatuchak Market Shopping <br>Day 4: Visit Wat Arun & Chinatown <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Daily Breakfast", "Temple Tours", "Market Visits"],
+                    exclusions: ["Flights", "Personal Expenses", "Optional Tours"],
+                    price: "$1000 per person"
+                },
+                singapore: {
+                    title: "Singapore City Escape",
+                    image: "images/destination-1.jpg",
+                    description: "Explore Sentosa Island, visit the Singapore Zoo, and enjoy the city's modern attractions.",
+                    itinerary: "Day 1: Arrival and hotel check-in <br>Day 2: Sentosa Island Visit <br>Day 3: Singapore Zoo and Gardens by the Bay <br>Day 4: Orchard Road Shopping <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Daily Breakfast", "Sentosa Island Visit", "Zoo Tickets"],
+                    exclusions: ["Flights", "Personal Expenses", "Optional Activities"],
+                    price: "$2500 per person"
+                },
+                tokyo: {
+                    title: "Tokyo Wonderland",
+                    image: "images/destination-4.jpg",
+                    description: "Visit Disneyland Tokyo, anime museums, and explore the vibrant streets of Shibuya.",
+                    itinerary: "Day 1: Arrival and hotel check-in <br>Day 2: Tokyo Disneyland Visit <br>Day 3: Explore Shibuya & Harajuku <br>Day 4: Visit Anime Museums <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Daily Breakfast", "Tokyo Disneyland Tickets", "City Tours"],
+                    exclusions: ["Flights", "Personal Expenses", "Additional Attractions"],
+                    price: "$2800 per person"
+                },
+                orlando: {
+                    title: "Orlando Family Fun",
+                    image: "images/destination-5.jpg",
+                    description: "Enjoy magical moments with the whole family at Disney World and Universal Studios.",
+                    itinerary: "Day 1: Arrival and hotel check-in <br>Day 2: Disney World Adventure <br>Day 3: Universal Studios Experience <br>Day 4: Visit SeaWorld <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Theme Park Tickets", "Daily Breakfast", "Family-friendly Activities"],
+                    exclusions: ["Flights", "Personal Expenses", "Optional Park Tickets"],
+                    price: "$3500 per person"
+                },
+                peru: {
+                    title: "Peru Adventure",
+                    image: "images/destination-6.jpg",
+                    description: "Hike the legendary Inca Trail and explore the breathtaking ruins of Machu Picchu.",
+                    itinerary: "Day 1: Arrival in Cusco <br>Day 2: Sacred Valley Tour <br>Day 3: Inca Trail Hike <br>Day 4: Machu Picchu Visit <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Inca Trail Trekking", "Machu Picchu Entrance", "Daily Breakfast"],
+                    exclusions: ["Flights", "Personal Expenses", "Additional Trekking Tours"],
+                    price: "$2200 per person"
+                },
+                newzealand: {
+                    title: "New Zealand Adventure",
+                    image: "images/destination-1.jpg",
+                    description: "Bungee jumping, skydiving, and thrilling adventure sports await in Queenstown.",
+                    itinerary: "Day 1: Arrival in Queenstown <br>Day 2: Bungee Jumping Adventure <br>Day 3: Skydiving Experience <br>Day 4: Explore Milford Sound <br>Day 5: Departure.",
+                    inclusions: ["Adventure Activities", "Hotel Stay", "Daily Breakfast", "Outdoor Experiences"],
+                    exclusions: ["Flights", "Personal Expenses", "Optional Sports Activities"],
+                    price: "$3000 per person"
+                },
+                patagonia: {
+                    title: "Patagonia Exploration",
+                    image: "images/destination-2.jpg",
+                    description: "Explore the rugged beauty of Patagonia with guided hikes and glacier treks.",
+                    itinerary: "Day 1: Arrival in Ushuaia <br>Day 2: Hike Tierra del Fuego <br>Day 3: Glacier Trekking <br>Day 4: Lago Argentino Tour <br>Day 5: Departure.",
+                    inclusions: ["Hotel Stay", "Glacier Trekking", "Guided Hikes", "Daily Breakfast"],
+                    exclusions: ["Flights", "Personal Expenses", "Optional Excursions"],
+                    price: "$2700 per person"
+                }
+            };
+
+            // Function to update modal content
+            function updateModal(placeKey) {
+                const offer = offerDetails[placeKey];
+                if (offer) {
+                    document.getElementById("offerTitle").textContent = offer.title;
+                    document.getElementById("offerImage").src = offer.image;
+                    document.getElementById("offerImage").alt = offer.title;
+                    document.getElementById("offerDescription").textContent = offer.description;
+                    document.getElementById("offerItinerary").innerHTML = offer.itinerary;
+                    document.getElementById("offerPrice").textContent = offer.price;
+
+                    // Populate inclusions
+                    const inclusionsList = document.getElementById("offerInclusions");
+                    inclusionsList.innerHTML = "";
+                    offer.inclusions.forEach(item => {
+                        let li = document.createElement("li");
+                        li.textContent = item;
+                        inclusionsList.appendChild(li);
+                    });
+
+                    // Populate exclusions
+                    const exclusionsList = document.getElementById("offerExclusions");
+                    exclusionsList.innerHTML = "";
+                    offer.exclusions.forEach(item => {
+                        let li = document.createElement("li");
+                        li.textContent = item;
+                        exclusionsList.appendChild(li);
+                    });
+                }
+            }
+
+            // Event listener for all "View Details" buttons
+            document.querySelectorAll(".offer-card button").forEach(button => {
+                button.addEventListener("click", function () {
+                    const placeKey = this.closest(".offer-card").getAttribute("data-place");
+                    updateModal(placeKey);
+                });
+            });
+        });
+
+        document.getElementById("categoryFilter").addEventListener("change", function () {
+            let selectedCategory = this.value;
+            document.querySelectorAll(".offer-category").forEach(category => {
+                category.style.display = selectedCategory && !category.classList.contains(selectedCategory) ? "none" : "block";
+            });
+        });
+
+        document.getElementById("placeFilter").addEventListener("keyup", function () {
+            let searchValue = this.value.toLowerCase();
+
+            document.querySelectorAll(".offer-category").forEach(category => {
+                let cards = category.querySelectorAll(".offer-card");
+                let hasResults = false;
+
+                cards.forEach(card => {
+                    let place = card.getAttribute("data-place").toLowerCase();
+                    if (place.includes(searchValue)) {
+                        card.style.display = "block";
+                        hasResults = true;
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                // Show "No offers available" message if no results found in the category
+                let noResultsMessage = category.querySelector(".no-results");
+                noResultsMessage.style.display = hasResults ? "none" : "block";
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
